@@ -1,10 +1,10 @@
 <template>
   <p>Hello World!</p>
   <hr />
-  <Student @response="showData" studentName="Andy" />
-  <Student @response="showData" studentName="Bob" />
-  <Student @response="showData" studentName="Charlie" />
-  <p>Student yan dipilih adalah : {{ selectedStudent }}</p>
+  <Student @response="showData" studentName="Andy"> ini slot dari parent 1 </Student>
+  <Student @response="showData" studentName="Bob"></Student>
+  <Student @response="showData" studentName="Charlie"></Student>
+  <p>Student yang dipilih adalah : {{ selectedStudent }}</p>
 </template>
 
 <script>
@@ -19,8 +19,9 @@ export default {
     };
   },
   methods: {
-    showData(student) {
-      this.selectedStudent = student;
+    showData(whatever) {
+      this.selectedStudent = whatever;
+      console.log(whatever);
     },
   },
 };

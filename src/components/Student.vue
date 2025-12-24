@@ -1,7 +1,9 @@
 <template>
+  <slot>Slot Default</slot>
   <p>
     Component Student <strong>{{ studentName }} <button @click="showData">click me</button></strong>
   </p>
+  <hr />
 </template>
 
 <script>
